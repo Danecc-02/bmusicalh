@@ -1,0 +1,45 @@
+﻿@model bmusicalh.Models.BandaMusic
+
+@{
+    ViewData["Title"] = "Editar Departamento";
+
+}
+
+<h2>Editar</h2>
+
+<hr />
+
+<div class="row" div>
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BandaMusicId" />
+            <div class="form-group">
+                <label asp-for="BandaMusicName" class="control-label"></label>
+                <input asp-for="BandaMusicName" class="form-control" />
+                <span asp-validation-for="BandaMusicName" class="text-danger"></span>
+
+                <label asp-for="BandaMusicGenero" class="control-label"></label>
+                <input asp-for="BandaMusicGenero" class="form-control" />
+                <span asp-validation-for="BandaMusicGenero" class="text-danger"></span>
+
+                <label asp-for="BandaMusicCountry" class="control-label"></label>
+                <input asp-for="BandaMusicCountry" class="form-control" />
+                <span asp-validation-for="BandaMusicCountry" class="text-danger"></span>
+
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Editar" class="btn btn-primary" />
+                    <a asp-action="Index" class=" btn btn-warning">Regresar</a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
